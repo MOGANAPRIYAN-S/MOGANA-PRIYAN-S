@@ -16,6 +16,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
 import { AdminDashboard } from './components/AdminDashboard';
+import { SectionReveal } from './components/SectionReveal';
 import { Sparkles, Bot, MessageSquare } from 'lucide-react';
 
 export default function App() {
@@ -68,52 +69,76 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="relative">
         {/* 1. Hero Section */}
-        <Hero
-          profile={data.profile}
-          onOpenResume={() => setIsResumeOpen(true)}
-          onOpenAI={scrollToAI}
-        />
+        <SectionReveal duration={0.8} yOffset={24}>
+          <Hero
+            profile={data.profile}
+            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenAI={scrollToAI}
+          />
+        </SectionReveal>
 
         {/* 2. Professional Biography */}
-        <About profile={data.profile} />
+        <SectionReveal yOffset={36}>
+          <About profile={data.profile} />
+        </SectionReveal>
 
         {/* 3. Skills Matrix */}
-        <Skills categories={data.skillCategories} />
+        <SectionReveal yOffset={36}>
+          <Skills categories={data.skillCategories} />
+        </SectionReveal>
 
         {/* 4. Flagship Projects & Architecture Blueprints */}
-        <Projects projects={data.projects} />
+        <SectionReveal yOffset={36}>
+          <Projects projects={data.projects} />
+        </SectionReveal>
 
         {/* 5. Certifications & Credentials */}
-        <Certifications certificates={data.certificates} />
+        <SectionReveal yOffset={36}>
+          <Certifications certificates={data.certificates} />
+        </SectionReveal>
 
         {/* 6. SIH Honors & Achievements */}
-        <Achievements achievements={data.achievements} />
+        <SectionReveal yOffset={36}>
+          <Achievements achievements={data.achievements} />
+        </SectionReveal>
 
         {/* 7. Education Timeline */}
-        <Education education={data.education} />
+        <SectionReveal yOffset={36}>
+          <Education education={data.education} />
+        </SectionReveal>
 
         {/* 8. 2024-2026 Journey */}
-        <Journey journey={data.journey} />
+        <SectionReveal yOffset={36}>
+          <Journey journey={data.journey} />
+        </SectionReveal>
 
         {/* 9. Event & Hackathon Photo Gallery */}
-        <Gallery gallery={data.gallery} />
+        <SectionReveal yOffset={36}>
+          <Gallery gallery={data.gallery} />
+        </SectionReveal>
 
         {/* 10. Conversational AI Assistant */}
-        <AIAssistant profile={data.profile} />
+        <SectionReveal yOffset={36}>
+          <AIAssistant profile={data.profile} />
+        </SectionReveal>
 
         {/* 11. Contact Form & Direct Inquiries */}
-        <Contact
-          profile={data.profile}
-          onOpenResume={() => setIsResumeOpen(true)}
-        />
+        <SectionReveal yOffset={36}>
+          <Contact
+            profile={data.profile}
+            onOpenResume={() => setIsResumeOpen(true)}
+          />
+        </SectionReveal>
       </main>
 
       {/* Footer */}
-      <Footer
-        profile={data.profile}
-        onOpenAdmin={() => setIsAdminOpen(true)}
-        onOpenResume={() => setIsResumeOpen(true)}
-      />
+      <SectionReveal yOffset={20} duration={0.6}>
+        <Footer
+          profile={data.profile}
+          onOpenAdmin={() => setIsAdminOpen(true)}
+          onOpenResume={() => setIsResumeOpen(true)}
+        />
+      </SectionReveal>
 
       {/* Floating AI Interaction Button */}
       <div className="fixed bottom-6 right-6 z-40">
